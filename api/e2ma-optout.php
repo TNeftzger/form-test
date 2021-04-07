@@ -11,7 +11,7 @@ $headers = array(
     //Get Email Address from Form
     $email = $_GET["email"];
 
-    $url = $urlPrefix.$account_id."/members/email/optout/".$email."";
+    $url = $urlPrefix.$account_id."/members/email/opt-out/".$email."";
 
     $ch = curl_init($url);
 

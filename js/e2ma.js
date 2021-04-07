@@ -7,13 +7,13 @@ jQuery(document).ready(function($) {
     }, {
       'shortcut' : 'last_name'
     }, {
-      'shortcut' : 'subscribe-to',
+      'shortcut' : 'subscriptions',
       'multiple_inputs' : true,
       'type': 'arr'
     }
   ]
   const opt_in_confirmation = false;
-  const group_ids = [12345];
+  const group_ids = [17142795];
   const signup_form_id = 1874746;
   const e = GetQueryStringParams("e");
   const mid = GetQueryStringParams("mid");
@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
   const $optout = $("#optout");
   const $recieveOptions = $("#recieve-options");
   const $updateMemberBtn = $('#submitCont, #saveChanges');
-  const $subscriptions = $(`input[id^="subscribe-to"]`);
+  const $subscriptions = $(`input[id^="subscriptions"]`);
   const $initalHides = $("#manage, #classic, #updateFailure, #form, #contactFailure, #formHeaderSuccess, #manageNoEmail");
   const reduceMap = {
     "arr" : {
@@ -49,11 +49,10 @@ jQuery(document).ready(function($) {
 
   $form.trigger('reset');
   $useremail.text(e);
-  $optout.on('click', toggleOptions);
+  $optout.on('click', optoutMember);
   $subscriptions.on('click', toggleOptions);
-  // make sure you can uncheck radios
 
-	/* set form options on load */
+  /* set form options on load */
 	$initalHides.hide();
  	/* get member record via ajax calling e2ma-get.php */
 	$.ajax({
@@ -70,11 +69,7 @@ jQuery(document).ready(function($) {
   $updateMemberBtn.on('click', updateMember);
 
   function toggleOptions(){
-    if($optout.is(':checked')){
-      $recieveOptions.hide();
-    }else{
-      $recieveOptions.show();
-    }
+    $recieveOptions.show();
   }
 
   function populateForm() {
@@ -100,24 +95,20 @@ jQuery(document).ready(function($) {
   }
 
   function updateMember() {
-    if($optout.is(':checked')){
-      optoutMember();
-    }else{
-      var data = compileMemberData();
-  
-      $.ajax({
-        type: "POST",
-        cache: false,
-        async: false,
-        url : 'api/e2ma-update.php?memberid='+mid,
-        contentType: 'application/json',
-        dataType: 'json',
-        data: data,
-        beforeSend: optoutBeforeSend, 
-        success: sendSuccess,
-        error: sendError
-      });
-    }
+    var data = compileMemberData();
+
+    $.ajax({
+      type: "POST",
+      cache: false,
+      async: false,
+      url : 'api/e2ma-update.php?memberid='+mid,
+      contentType: 'application/json',
+      dataType: 'json',
+      data: data,
+      beforeSend: optoutBeforeSend, 
+      success: sendSuccess,
+      error: sendError
+    });
   }
 
   function sendError() {
@@ -193,8 +184,7 @@ jQuery(document).ready(function($) {
     const source = "updatedByTechServCustomForm";
     const fields = getFieldValues();
     const email = e;
-    const memberid = mid;
-    const data = {email, fields, source, group_ids, signup_form_id, opt_in_confirmation};
+    const data = {email, ...fields, source, group_ids, signup_form_id, opt_in_confirmation};
     const data_string = JSON.stringify(data)
     return data_string;
   }
