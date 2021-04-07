@@ -1,0 +1,77 @@
+.etsf-message{
+	background-color: #27AAE1;
+	border-radius: 0.25rem;
+	color: #fff;
+	margin: 0.25rem 0;
+	padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+}
+.etsf-message a{
+	color: #fff;
+}
+.etsf-success{
+    background-color: #8DC63F;
+}
+.etsf-failure{
+    background-color: #D91B5C;
+}
+.etsf-title{
+	margin-bottom: 0.25rem;
+}
+.etsf-description{
+	margin-top: 0;
+}
+.etsf-light{
+	background-color: #fff;
+	color: inherit;
+}
+.etsf-light a{
+	color: inherit;
+}
+.btn-warning{ 
+    background-color: #545861;
+    border: 1px solid #545861;
+    box-shadow: inset 0 0 1px #545861;
+}
+.btn-warning:hover{
+	border-color: #545861;
+    box-shadow: inset 0 0 1px #545861;
+    color: #545861;
+}
+.btn-width{
+	min-width: 325px;
+	max-width: 100%;
+}
+.orange{
+	color: #ff6500;
+}
+.top_label{
+	padding-top: 2rem;
+}
+.text-align-center{
+	text-align: center;
+}
+.mb-0{
+	margin-bottom: 0;
+}
+.gfield_radio li [type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    height: 1.25rem;
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 1.25rem;
+}
+.gfield_radio li [type=checkbox]:checked+label:after {
+    background: #fff;
+    box-shadow: inset 0 0 0 0.3125rem #67bd4a;
+}
+.gform_fields{
+	overflow:auto;
+	padding-bottom: 35px;
+}
