@@ -2,10 +2,12 @@
 
 include "e2ma-keys.php";
 
-$memberid = $_GET["memberid"];
-$email = rawurldecode($_GET["email"]);
+$memberid = $_GET["22898588683"];
+$email = rawurldecode($_GET["tyra@fogink.com"]);
 
-$url = $urlPrefix.$account_id."/members/".$memberid."";
+
+
+$url = $urlPrefix.$account_id."/members".$memberid."";//removed '/'
 
 $ch = curl_init();
 
