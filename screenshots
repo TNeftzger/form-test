@@ -3,3 +3,14 @@ Requests:
 POST - https://cm.d.pr/gkhIiJ
 GET - https://cm.d.pr/LZkYLO
 FORM WORKS CORRECTLY - https://cm.d.pr/xkDQDk
+
+2. I need to update subscription options on my form!
+This was difficult for me since you do not have Subscriptions enabled in the account. Also, Subscriptions is on the https://p-vc-subscriptions-api.vc.e2.ma URL and not the https://support-api.int.e2.ma URL.
+
+3. I need to add a new field to my account & form!
+POST - I played around with 2 - https://cm.d.pr/ErrJzh (experimenting)
+UPDATED MEMBER FOR FIELDS - https://cm.d.pr/4BsVTv
+
+4. The opt-out button on my form is not working properly!
+PUT - https://cm.d.pr/MjER2F
+VERIFICATION - https://cm.d.pr/Rj8Tjr
