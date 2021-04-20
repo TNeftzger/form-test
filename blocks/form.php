@@ -12,7 +12,7 @@
       </head>
 
   <body>
-    <form action="index.html" method="post">
+    <form>
 
       <h1>Sign Up</h1>
 

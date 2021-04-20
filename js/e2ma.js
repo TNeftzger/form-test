@@ -31,17 +31,17 @@ jQuery(document).ready(function($) {
   const $initalHides = $("#manage, #classic, #updateFailure, #form, #contactFailure, #formHeaderSuccess, #manageNoEmail");
   const reduceMap = {
     "arr" : {
-      "method": function(acc, i){ 
+      "method": function(acc, i){
         console.log($(i).val())
-        acc.push($(i).val()); 
-        return acc; 
+        acc.push($(i).val());
+        return acc;
       },
       "init": []
     },
     "str": {
-      "method": function(acc, i){ 
-        acc += $(i).val(); 
-        return acc; 
+      "method": function(acc, i){
+        acc += $(i).val();
+        return acc;
       },
       "init": ""
     }
@@ -105,15 +105,15 @@ jQuery(document).ready(function($) {
       contentType: 'application/json',
       dataType: 'json',
       data: data,
-      beforeSend: optoutBeforeSend, 
+      beforeSend: optoutBeforeSend,
       success: sendSuccess,
       error: sendError
     });
   }
 
   function sendError() {
-    $("#contactFailure").show(); 
-    $("#form").removeClass('loading'); 
+    $("#contactFailure").show();
+    $("#form").removeClass('loading');
   }
 
   function errorGetMember() {
@@ -132,7 +132,7 @@ jQuery(document).ready(function($) {
         data: "{}",
         contentType: 'application/json',
         dataType: 'json',
-        beforeSend: optoutBeforeSend, 
+        beforeSend: optoutBeforeSend,
         success: optoutSuccess,
         error: optoutError
     });
@@ -218,7 +218,7 @@ jQuery(document).ready(function($) {
   /* Gets Values from URL parameters/querystrings */
   function GetQueryStringParams(sParam) {
     var sPageURL = window.location.search.substring(1);
-    var sPageURL = decodeURIComponent(sPageURL); 
+    var sPageURL = decodeURIComponent(sPageURL);
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++)
     {
